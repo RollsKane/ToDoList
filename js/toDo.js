@@ -14,6 +14,7 @@
 /* VARIABLES */
 
 var toDoList = new Array();
+var toDoListPriority = new Array();
 var id = 1;
 var tareas = document.getElementById('tareas'); // Aquí se hallan las tareas en el HTML
 var icon = 'normal';
@@ -111,7 +112,7 @@ function postPosit(pLista, pId) {
     for (let i = 0; i < pLista.length; i++) {
         if (pLista[i].id == pId) {
             console.log(pLista[i]);
-            tareas.innerHTML += '<article id="' + pLista[i].id + '" class="' + pLista[i].prioridad + '"><h2>' + pLista[i].titulo.toUpperCase() + '</h2><i class="' + pLista[i].icono + '"></i><a href="#" title="eliminar">Eliminar</a></article>';
+            tareas.innerHTML += '<article id="' + pLista[i].id + '" class="' + pLista[i].prioridad + '"><h2>' + pLista[i].titulo.toUpperCase() + '</h2><i class="' + pLista[i].icono + '"></i><a href="#" title="eliminar"><i class="fas fa-trash-alt"></i></a></article>';
         }
     }
 
@@ -184,16 +185,29 @@ function deletePosit(pLista, pId) {
 }
 
 
+/******************************************************/
+/* FUNCIÓN PARA BORRAR TODOS LOS POSIT */
+
+function clearPosit(pLista) {
+    pLista = [];
+    postAllPosits();
+}
+
 
 /******************************************************/
 /* FUNCIÓN PARA FILTRAR POR PRIORIDAD */
 
 function filterPriority(pLista, pPrioridad) {
 
-    for (dos of toDoList) {
-        console.log(dos);
+    for (let i = 0; i <= pLista.length; i++) {
+        if (pLista[i].prioridad == pPrioridad) {
+            console.log(pLista[i].pPrioridad);
+            // toDoListPriority.push(pLista[i]);
+        }
     }
+    //  postAllPosits(toDoListPriority);
 
+    return toDoListPriority;
 }
 
 

@@ -67,14 +67,53 @@ body div#wrapper{
 
 }
 
-/*********** TAREAS *************/
-
-section#tareas {
-    
-
+header>div {
+    display: relative;
+    padding: 5px;
+    width: 100%;
+    background-color: #00000069;
+    color: white;
 }
 
+header>div span{
+    font-family: 'Press Start 2P', cursive;
+    font-size: 2rem;
+}
+
+header>div div.baron {
+    float: right;
+    
+}
+
+/*********** CLEAR **************/
+
+#clear {
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.50);
+    font-size: 5rem;
+    padding: 10px;
+    background-color: orangered;
+    float: right;
+    position: absolute;
+    margin-left: 70%;
+    border-radius: 10px;
+    border: orangered solid 2px;
+    transition: 1s;
+}
+
+#clear:hover {
+    background-color: transparent;
+    border: orangered solid 2px;
+    transition: 1s;
+    color: white;
+}
+
+/*********** TAREAS *************/
+
+
+
 article {
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.50);
+    border-radius: 6px;
     display: relative;
     transition: 1s;
 }
@@ -83,6 +122,10 @@ article:hover {
     transform: translateX(12px);
     transition: 1s;
 
+}
+
+article h2 {
+    padding: 20px;
 }
 
 article i{
@@ -130,6 +173,7 @@ transition: 1s;
 /*********** FOOTER *************/
 
 footer {
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.50);
     background-color: black;
     width: 100%;
     color: white;
@@ -137,6 +181,6 @@ footer {
 }
 
 footer span {
-font-family: 'Press Start 2P', cursive;
+    font-family: 'Press Start 2P', cursive;
     font-size: 2em;
 }
