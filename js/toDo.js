@@ -18,7 +18,7 @@ var id = 1;
 var tareas = document.getElementById('tareas'); // Aquí se hallan las tareas en el HTML
 var icon = 'normal';
 
-
+/* Ejemplo de Lista de Jsons
 toDoList = [
     {
         'id': 1,
@@ -39,14 +39,21 @@ toDoList = [
         'icono': 'fas fa-exclamation-triangle',
     }
 ];
+*/
+
 
 
 /******************************************************/
 /* FUNCIÓN PARA CREAR POSITS */
+/* TIENE UN CALLBACK A LA FUNCIÓN DE PINTAR POSITS */
 
-function createPosit(pTitulo, pTexto, pPrioridad = 'normal') { // si no se elige prioridad, se da por normal
+function createPosit(pTitulo, pPrioridad = 'normal') { // si no se elige prioridad, se da por normal
 
-    switch (pPrioridad) {
+    if (pPrioridad != 'normal' && pPrioridad != 'importante' && pPrioridad != 'urgente') {
+        pPrioridad = 'normal'; // Si la prioridad es diferente de las tres, es normal
+    }
+
+    switch (pPrioridad) { // Dependiendo de la prioridad, cambia el icono
         case 'normal':
             icon = 'fas fa-exclamation-triangle';
             break;
@@ -57,6 +64,7 @@ function createPosit(pTitulo, pTexto, pPrioridad = 'normal') { // si no se elige
             icon = 'fas fa-skull-crossbones'
     }
 
+
     let posit = {
         'id': id,
         'titulo': pTitulo,
@@ -64,6 +72,9 @@ function createPosit(pTitulo, pTexto, pPrioridad = 'normal') { // si no se elige
         'icono': icon
     }
     toDoList.push(posit);
+
+    postPosit(id);
+
 
     return id += 1;
 }
@@ -83,15 +94,15 @@ function postPosit(pId) {
 
     console.log(tareas[0]);
 
-    for (let i = 0; i < toDoList.length - 1; i++) {
+    for (let i = 0; i < toDoList.length; i++) {
         if (toDoList[i].id == pId) {
             console.log(toDoList[i]);
-            tareas.innerHTML += '<article id="' + toDoList[i].id + '" class="' + toDoList[i].prioridad + '"><h2>' + toDoList[i].titulo + '</h2><i class="' + toDoList[i].icon + '"></i><a href="#" title="eliminar">Eliminar</a></article>';
+            tareas.innerHTML += '<article id="' + toDoList[i].id + '" class="' + toDoList[i].prioridad + '"><h2>' + toDoList[i].titulo + '</h2><i class="' + toDoList[i].icono + '"></i><a href="#" title="eliminar">Eliminar</a></article>';
         }
     }
 
 
-    return;
+    return toDoList;
 }
 
 
@@ -110,7 +121,7 @@ function postAllPosits() {
 
         console.log(toDoList[i]);
 
-        tareas.innerHTML += '<article id="' + toDoList[i].id + '" class="' + toDoList[i].prioridad + '"><h2>' + toDoList[i].titulo + '</h2><i class="' + toDoList[i].icon + '"></i><a href="#" title="eliminar">Eliminar</a></article>';
+        tareas.innerHTML = '<article id="' + toDoList[i].id + '" class="' + toDoList[i].prioridad + '"><h2>' + toDoList[i].titulo + '</h2><i class="' + toDoList[i].icono + '"></i><a href="#" title="eliminar">Eliminar</a></article>';
     }
 }
 
@@ -130,37 +141,20 @@ function deletePosit(pId) {
 
     for (let i = 0; i < toDoList.length - 1; i++) {
         if (toDoList[i].id == pId) {
-            toDoList.pop(toDoList[i]);
+            var postBorrar = toDoList[i];
         }
+
     }
+
+    toDoList.splice(postBorrar, 1);
+
     postAllPosits()
 
     return toDoList;
 }
 
 
-/*
-function borrarNoticia(plistaNoticias, pId) {
-    var noticiaBorrar = plistaNoticias.find((noticia) => {
-        return noticia.id == pId;
-    })
 
-    // para emplear Splice necesito la posición del objeto capturado en la variable listaBorrar
-
-    var posicionNoticia = plistaNoticias.findIndex((noticia) => {
-        return noticia.id == noticiaBorrar.id
-    });
-    //console.log(posicionNoticia);
-
-    plistaNoticias.splice(posicionNoticia, 1);
-
-    var seccion = document.getElementsByTagName('section')[0];
-    seccion.innerHTML = '<h2>BLOG</h2>';
-
-    pintarNoticias(plistaNoticias);
-
-}
-*/
 
 
 

@@ -22,3 +22,8 @@
 .urgente {
     background-color: red;
 }
+
+footer {
+    background-color: black;
+    width: 100%;
+}
