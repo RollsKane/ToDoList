@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<!--/******************************************************/
+/*____    _____         _     _     _ 
+|_   _|   | _  \       | |   (_)   | |
+  | | ___ | | | |___   | |    _ ___| |_
+  | |/ _ \| | | / _ \  | |   | / __| __|
+  | | (_) | |/ / (_) | | |___| \__ \ |_
+  \_/\___/|___/ \___/  \_____/_|___/\__|By Rolls 2020*/
+
+/******************************************************/-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ToDo List - By Rolls</title>
+
+    <!-- Cargando librería de iconos tipográficos en hoja de estilo -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+
+    <!-- Cargando hoja de estilo de index.html-->
+    <link rel="stylesheet" href="css/index_styles.css">
+</head>
+
+<body>
+    <!--Comienzo del wrapper-->
+    <div id="wrapper">
+        <header>
+            <div class="insert">
+                <form action="#" method="get">
+                    <input type="text" id="tituloTarea" placeholder="Introduce la tarea">
+
+                    <select id="prioridad" required>
+                        <option value="">Selecciona una prioridad</option>
+                        <option value="urgente">Urgente</option>
+                        <option value="importante">Importante</option>
+                        <option value="normal">Normal</option>
+                    </select>
+
+                    <input type="submit" value="Guardar" id="guardar">
+                </form>
+                <p id="mensaje"></p>
+            </div>
+            <div class="filter">
+                <select id="prioridadSelect">
+                    <option value="">Todas las tareas</option>
+                    <option value="urgente">Urgente</option>
+                    <option value="importante">Importante</option>
+                    <option value="normal">Normal</option>
+                </select>
+
+                <input type="text" placerholder="Tarea a buscar" id="search">
+            </div>
+        </header>
+
+        <main>
+            <section class="notareas" id="notareas">
+
+            </section>
+            <section class="tareas" id="tareas">
+
+
+                <!-- este contenido hay que comentarlo cuando empeceis a desarrollar el listado de tareas-->
+
+                <article id="1" class="urgente">
+                    <h2>Titulo de la tarea 1 - Esta tarea es DUMMY</h2>
+                    <a href="#" title="eliminar">Eliminar</a>
+                </article>
+
+                <article id="1" class="diaria">
+                    <h2>Titulo de la tarea 1 - Esta tarea es DUMMY</h2>
+                    <a href="#" title="eliminar">Eliminar</a>
+                </article>
+
+                <article id="2" class="mensual">
+                    <h2>Titulo de la tarea 2 - Esta tarea es DUMMY</h2>
+                    <a href="#" title="eliminar">Eliminar</a>
+                </article>
+
+                <article id="3" class="diaria">
+                    <h2>Titulo de la tarea 3 - Esta tarea es DUMMY</h2>
+                    <a href="#" title="eliminar">Eliminar</a>
+                </article>
+
+                <!-- este contenido hay que comentarlo cuando empeceis a desarrollar el listado de tareas-->
+
+            </section>
+        </main>
+
+        <footer>
+            <p>APP TODO's Proyecto Final</p>
+        </footer>
+
+
+    </div>
+
+    <!-- Script JS -->
+    <script src="js/toDo.js"></script>
+
+</body>
+
+</html>
