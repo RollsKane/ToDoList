@@ -10,6 +10,108 @@
 /******************************************************/
 
 /* CSS STYLES */
+/* CÓDIGO BÁSICO */
+
+
+/* Cargando reset */
+
+@import url(reset.css);
+
+/* Cargando fuentes */
+
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P|Share+Tech&display=swap');
+
+
+/* FUENTES */
+/*
+font-family: 'Share Tech', sans-serif;
+font-family: 'Press Start 2P', cursive;
+/*
+
+/* COLORES */
+/*
+color rojo: #fa573a;
+color azul: #21242e;
+*/
+
+/*************************************/
+
+/* Box Sizing reset */
+
+
+*{
+    box-sizing: border-box;
+}
+
+/* Declarando fuente */
+
+body {
+    font-family: 'Share Tech', sans-serif;
+    font-size: 1em;
+    background-image: url('../img/Wall.png'); /* Background */
+}
+
+body div#wrapper{
+    background-color: #00000096;
+}
+
+
+
+/*************************************/
+
+#wrapper{
+        clear: both;
+    content: "";
+    height: 0;
+    display: block;
+
+}
+
+/*********** TAREAS *************/
+
+section#tareas {
+    
+
+}
+
+article {
+    display: relative;
+    transition: 1s;
+}
+
+article:hover {
+    transform: translateX(12px);
+    transition: 1s;
+
+}
+
+article i{
+    padding: 10px;
+    font-size: 3rem;
+    transition: 1s;
+}
+
+article i:hover{
+    font-size: 120%;
+    transition: 1s;
+}
+
+article a {
+    display: absolute;
+    text-align: right;
+    text-decoration: none;
+    color: black;
+    font-size: 1em;
+    font-weight: 700;
+    border: black;
+    transition: 1s;
+
+}
+
+article a:hover {
+font-size: 120%;
+transition: 1s;
+}
 
 .normal {
     background-color: greenyellow;
@@ -23,7 +125,18 @@
     background-color: red;
 }
 
+
+
+/*********** FOOTER *************/
+
 footer {
     background-color: black;
     width: 100%;
+    color: white;
+    text-align: center;
+}
+
+footer span {
+font-family: 'Press Start 2P', cursive;
+    font-size: 2em;
 }

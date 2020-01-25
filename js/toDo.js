@@ -43,6 +43,20 @@ toDoList = [
 
 
 
+
+/*******************************************************/
+/***
+ *      ___
+ *     /                   /
+ *    (___       ___  ___    ___  ___  ___  ___
+ *    |    |   )|   )|    | |   )|   )|___)|___
+ *    |    |__/ |  / |__  | |__/ |  / |__   __/
+ *
+ */
+/******************************************************/
+
+
+
 /******************************************************/
 /* FUNCIÓN PARA CREAR POSITS */
 /* TIENE UN CALLBACK A LA FUNCIÓN DE PINTAR POSITS */
@@ -97,7 +111,7 @@ function postPosit(pId) {
     for (let i = 0; i < toDoList.length; i++) {
         if (toDoList[i].id == pId) {
             console.log(toDoList[i]);
-            tareas.innerHTML += '<article id="' + toDoList[i].id + '" class="' + toDoList[i].prioridad + '"><h2>' + toDoList[i].titulo + '</h2><i class="' + toDoList[i].icono + '"></i><a href="#" title="eliminar">Eliminar</a></article>';
+            tareas.innerHTML += '<article id="' + toDoList[i].id + '" class="' + toDoList[i].prioridad + '"><h2>' + toDoList[i].titulo.toUpperCase() + '</h2><i class="' + toDoList[i].icono + '"></i><a href="#" title="eliminar">Eliminar</a></article>';
         }
     }
 
@@ -116,37 +130,53 @@ function postPosit(pId) {
 
 function postAllPosits() {
 
+    tareas.innerHTML = '';
 
     for (let i = 0; i < toDoList.length; i++) {
 
         console.log(toDoList[i]);
 
-        tareas.innerHTML = '<article id="' + toDoList[i].id + '" class="' + toDoList[i].prioridad + '"><h2>' + toDoList[i].titulo + '</h2><i class="' + toDoList[i].icono + '"></i><a href="#" title="eliminar">Eliminar</a></article>';
+        tareas.innerHTML += '<article id="' + toDoList[i].id + '" class="' + toDoList[i].prioridad + '"><h2>' + toDoList[i].titulo.toUpperCase() + '</h2><i class="' + toDoList[i].icono + '"></i><a href="#" title="eliminar">Eliminar</a></article>';
     }
 }
 
 
+/******************************************************/
+/* FUNCIÓN PARA BORRAR EL ÚLTIMO POST */
 
+function deleteLastPosit() {
+    var insideTareas = tareas.innerHTML;
 
+    //console.log(insideTareas)
 
+    var ultimaTarea = toDoList.length - 1;
+
+    toDoList.splice(ultimaTarea, 1);
+
+    postAllPosits()
+
+    return toDoList;
+}
 
 /******************************************************/
-/* FUNCIÓN PARA BORRAR POSITS DEL ARRAY Y DEL PINTADO */
+/* FUNCIÓN PARA BORRAR EL POSIT QUE YO QUIERA */
 
 
 function deletePosit(pId) {
     var insideTareas = tareas.innerHTML;
 
-    //console.log(insideTareas)
+    for (let i = 0; i < toDoList.length; i++) {
 
-    for (let i = 0; i < toDoList.length - 1; i++) {
         if (toDoList[i].id == pId) {
-            var postBorrar = toDoList[i];
+            console.log(toDoList[i]); // ID a eliminar
+
+
+            toDoList.splice(toDoList[i], 1);
         }
 
     }
 
-    toDoList.splice(postBorrar, 1);
+
 
     postAllPosits()
 
