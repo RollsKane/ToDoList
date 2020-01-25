@@ -160,7 +160,7 @@ function deleteLastPosit(pLista) {
 }
 
 /******************************************************/
-/* FUNCIÓN PARA BORRAR EL POSIT QUE YO QUIERA */
+/* FUNCIÓN PARA BORRAR EL POSIT QUE YO QUIERA */ //////////////////////////////// NO FUNCIONA BIEN
 
 
 function deletePosit(pLista, pId) {
@@ -195,7 +195,7 @@ function clearPosit(pLista) {
 
 
 /******************************************************/
-/* FUNCIÓN PARA FILTRAR POR PRIORIDAD */
+/* FUNCIÓN PARA FILTRAR POR PRIORIDAD */ //////////////////////////////// NO FUNCIONA BIEN
 
 function filterPriority(pLista, pPrioridad) {
 
@@ -213,3 +213,48 @@ function filterPriority(pLista, pPrioridad) {
 
 /******************************************************/
 /* FUNCIÓN PARA FILTRAR POR BÚSQUEDA */
+
+/******************************************************/
+/* FUNCIÓN PARA CAMBIAR DE DEMONIO */
+
+var baron = document.getElementsByClassName('baron');
+var baronImage1 = '<img src="img/Baron1.png" alt="I´m an Baron from Hell!">';
+var baronImage2 = '<img src="img/Baron2.png" alt="I´m an Baron from Hell!">';
+var baronImage3 = '<img src="img/Baron3.png" alt="I´m an Baron from Hell!">';
+
+
+function changeDemon(pNumero) {
+    var baronImage = '';
+    switch (pNumero) {
+        case 1:
+            baronImage = baronImage1;
+            break;
+        case 2:
+            baronImage = baronImage2;
+            break;
+        case 3:
+            baronImage = baronImage3;
+            break;
+
+    }
+    baron[0].innerHTML = baronImage;
+    return baron;
+}
+
+/******************************************************/
+/* INTERVALO CAMBIAR DE DEMONIO */
+
+
+for (let i = 1; i <= 4; i++) {
+    console.log(i)
+    if (i == 4) {
+        i = 0;
+
+    }
+}
+
+let Intervalo = setInterval(function () {
+    var numeroAleatorio = parseInt(Math.random() * 3) + 1;
+    changeDemon(numeroAleatorio);
+};
+}, 1000)
