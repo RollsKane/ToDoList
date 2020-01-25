@@ -6,7 +6,7 @@
   | |/ _ \| | | / _ \  | |   | / __| __|
   | | (_) | |/ / (_) | | |___| \__ \ |_
   \_/\___/|___/ \___/  \_____/_|___/\__|By Rolls 2020*/
-
+            /* VERSIÓN 0.3 */
 /******************************************************/
 
 /* CSS STYLES */
@@ -68,7 +68,8 @@ body div#wrapper{
 }
 
 header>div {
-    display: relative;
+    display: flex;
+    flex-wrap: wrap;
     padding: 5px;
     width: 100%;
     background-color: #00000069;
@@ -80,8 +81,12 @@ header>div span{
     font-size: 2rem;
 }
 
-header>div div.baron {
-    float: right;
+header>div div.imp {
+    position: absolute;
+    
+    display: none;
+    transform: translateY(-500px);
+    transform: translateX(200px);
     
 }
 
@@ -93,11 +98,13 @@ header>div div.baron {
     padding: 10px;
     background-color: orangered;
     float: right;
-    position: absolute;
+    position: fixed;
     margin-left: 70%;
     border-radius: 10px;
     border: orangered solid 2px;
     transition: 1s;
+    transform: translateY(100px);
+        
 }
 
 #clear:hover {
@@ -135,8 +142,12 @@ article i{
 }
 
 article i:hover{
-    font-size: 120%;
+    font-size: 400%;
     transition: 1s;
+}
+
+article i.fa-trash-alt{
+    transform: translateX(200px);
 }
 
 article a {
@@ -152,22 +163,44 @@ article a {
 }
 
 article a:hover {
-font-size: 120%;
-transition: 1s;
+    font-size: 120%;
+    transition: 1s;
 }
 
+/******* CLASIFICACIÓN POR IMPORTANCIA *******/
+
 .normal {
-    background-color: greenyellow;
+    background-image: url('../img/bg1.png');
+    opacity: 0.5;
+    transition: 1s;
 }
 
 .importante {
-    background-color: orangered;
+    background-image: url('../img/bg2.png');
+    opacity: 0.5;
+    transition: 1s;
 }
 
 .urgente {
-    background-color: red;
+    background-image: url('../img/bg3.png');
+    opacity: 0.5;
+    transition: 1s;
 }
 
+.normal:hover {
+    opacity: 1;
+    transition: 1s;
+}
+
+.importante:hover {
+    opacity: 1;
+    transition: 1s;
+}
+
+.urgente:hover {
+    opacity: 1;
+    transition: 1s;
+}
 
 
 /*********** FOOTER *************/
@@ -183,4 +216,83 @@ footer {
 footer span {
     font-family: 'Press Start 2P', cursive;
     font-size: 2em;
+}
+
+
+/*******************************
+___  ___         _ _         _____                 _           
+|  \/  |        | (_)       |  _  |               (_)          
+| .  . | ___  __| |_  __ _  | | | |_   _  ___ _ __ _  ___  ___ 
+| |\/| |/ _ \/ _` | |/ _` | | | | | | | |/ _ \ '__| |/ _ \/ __|
+| |  | |  __/ (_| | | (_| | \ \/' / |_| |  __/ |  | |  __/\__ \
+\_|  |_/\___|\__,_|_|\__,_|  \_/\_\\__,_|\___|_|  |_|\___||___/
+*******************************/
+
+/* Primer Breakpoint */
+/* Mobil grande / Tablet pequeña */
+
+@media(min-width: 48.063em)
+{
+    article i.fa-trash-alt{
+        margin-left: 300px;
+        
+    }
+    
+    #clear {
+        transform: translateY(20px);
+        margin-left: 80%;
+    }
+
+    header>div div.imp {
+        display: inline;
+        transform: translateY(-120px);
+        margin-left: 70%;
+    }
+    
+}
+
+   
+
+
+/* Segundo Breakpoint */
+/* Tablet / Pantalla Pequeña */
+
+@media(min-width: 62.750em)
+{
+
+    article i.fa-trash-alt{
+        margin-left: 500px;
+    }
+
+    #clear {
+        transform: translateY(20px);
+        margin-left: 85%;
+    }
+
+    header>div div.imp {
+        transform: translateY(-120px);
+        margin-left: 60%;
+    }
+}
+
+
+/* Tercer Breakpoint */
+/* Desktop */
+
+@media(min-width: 75.0625em)
+{
+    article i.fa-trash-alt{
+        margin-left: 1000px;
+    }
+
+    #clear {
+        transform: translateY(20px);
+        margin-left: 90%;
+    }
+
+    header>div div.imp {
+        transform: translateY(-120px);
+        margin-left: 80%;
+    }
+
 }

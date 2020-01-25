@@ -6,10 +6,10 @@
   | |/ _ \| | | / _ \  | |   | / __| __|
   | | (_) | |/ / (_) | | |___| \__ \ |_
   \_/\___/|___/ \___/  \_____/_|___/\__|By Rolls 2020*/
-/* VERSIÓN 0.3 */
+
 /******************************************************/
 
-
+/* VERSIÓN 0.2 */
 
 /* VARIABLES */
 
@@ -137,7 +137,7 @@ function postAllPosits(pLista) {
 
         console.log(pLista[i]);
 
-        tareas.innerHTML += '<article id="' + pLista[i].id + '" class="' + pLista[i].prioridad + '"><h2>' + pLista[i].titulo.toUpperCase() + '</h2><i class="' + pLista[i].icono + '"></i><a href="#" title="eliminar"><i class="fas fa-trash-alt"></i></a></article>';
+        tareas.innerHTML += '<article id="' + pLista[i].id + '" class="' + pLista[i].prioridad + '"><h2>' + pLista[i].titulo.toUpperCase() + '</h2><i class="' + pLista[i].icono + '"></i><a href="#" title="eliminar">Eliminar</a></article>';
     }
 }
 
@@ -212,8 +212,34 @@ function filterPriority(pLista, pPrioridad) {
 
 
 /******************************************************/
-/* FUNCIÓN PARA FILTRAR POR BÚSQUEDA */ //////////////////////////////// FALTA
+/* FUNCIÓN PARA FILTRAR POR BÚSQUEDA */
+
+/******************************************************/
+/* FUNCIÓN ANTIGUA PARA CAMBIAR DE DEMONIO */
+
+/*
+
+var baron = document.getElementsByClassName('baron');
+var baronImages = ['<img src="img/Baron1.png" alt="I´m an Baron from Hell!">', '<img src="img/Baron2.png" alt="I´m an Baron from Hell!">', '<img src="img/Baron3.png" alt="I´m an Baron from Hell!">'];
 
 
+function changeDemon(pNumero) {
+    var baronImage = '';
+    switch (pNumero) {
+        case 1:
+            baronImage = baronImages[0];
+            break;
+        case 2:
+            baronImage = baronImages[1];
+            break;
+        case 3:
+            baronImage = baronImages[2];
+            break;
+
+    }
+    baron[0].innerHTML = baronImages[pNumero];
+    return baron;
+}
+*/
 /******************************************************/
 
