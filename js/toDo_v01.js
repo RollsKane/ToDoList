@@ -9,7 +9,7 @@
 
 /******************************************************/
 
-/* VERSIÓN 0.2 */
+/* VERSIÓN 0.1 */
 
 /* VARIABLES */
 
@@ -18,8 +18,8 @@ var id = 1;
 var tareas = document.getElementById('tareas'); // Aquí se hallan las tareas en el HTML
 var icon = 'normal';
 
-/* Ejemplo de Lista de Jsons */
-/*toDoList = [
+/* Ejemplo de Lista de Jsons
+toDoList = [
     {
         'id': 1,
         'titulo': 'Estudiar Javascript',
@@ -87,7 +87,7 @@ function createPosit(pTitulo, pPrioridad = 'normal') { // si no se elige priorid
     }
     toDoList.push(posit);
 
-    postPosit(toDoList, id);
+    postPosit(id);
 
 
     return id += 1;
@@ -103,20 +103,20 @@ function createPosit(pTitulo, pPrioridad = 'normal') { // si no se elige priorid
 // console.log(toDoList); // Array con posits
 
 
-function postPosit(pLista, pId) {
+function postPosit(pId) {
 
 
     console.log(tareas[0]);
 
-    for (let i = 0; i < pLista.length; i++) {
-        if (pLista[i].id == pId) {
-            console.log(pLista[i]);
-            tareas.innerHTML += '<article id="' + pLista[i].id + '" class="' + pLista[i].prioridad + '"><h2>' + pLista[i].titulo.toUpperCase() + '</h2><i class="' + pLista[i].icono + '"></i><a href="#" title="eliminar">Eliminar</a></article>';
+    for (let i = 0; i < toDoList.length; i++) {
+        if (toDoList[i].id == pId) {
+            console.log(toDoList[i]);
+            tareas.innerHTML += '<article id="' + toDoList[i].id + '" class="' + toDoList[i].prioridad + '"><h2>' + toDoList[i].titulo.toUpperCase() + '</h2><i class="' + toDoList[i].icono + '"></i><a href="#" title="eliminar">Eliminar</a></article>';
         }
     }
 
 
-    return pLista;
+    return toDoList;
 }
 
 
@@ -128,15 +128,15 @@ function postPosit(pLista, pId) {
 // console.log(toDoList); // Array con posits
 
 
-function postAllPosits(pLista) {
+function postAllPosits() {
 
     tareas.innerHTML = '';
 
-    for (let i = 0; i < pLista.length; i++) {
+    for (let i = 0; i < toDoList.length; i++) {
 
-        console.log(pLista[i]);
+        console.log(toDoList[i]);
 
-        tareas.innerHTML += '<article id="' + pLista[i].id + '" class="' + pLista[i].prioridad + '"><h2>' + pLista[i].titulo.toUpperCase() + '</h2><i class="' + pLista[i].icono + '"></i><a href="#" title="eliminar">Eliminar</a></article>';
+        tareas.innerHTML += '<article id="' + toDoList[i].id + '" class="' + toDoList[i].prioridad + '"><h2>' + toDoList[i].titulo.toUpperCase() + '</h2><i class="' + toDoList[i].icono + '"></i><a href="#" title="eliminar">Eliminar</a></article>';
     }
 }
 
@@ -144,34 +144,34 @@ function postAllPosits(pLista) {
 /******************************************************/
 /* FUNCIÓN PARA BORRAR EL ÚLTIMO POST */
 
-function deleteLastPosit(pLista) {
+function deleteLastPosit() {
     var insideTareas = tareas.innerHTML;
 
     //console.log(insideTareas)
 
-    var ultimaTarea = pLista.length - 1;
+    var ultimaTarea = toDoList.length - 1;
 
-    pLista.splice(ultimaTarea, 1);
+    toDoList.splice(ultimaTarea, 1);
 
-    postAllPosits(pLista)
+    postAllPosits()
 
-    return pLista;
+    return toDoList;
 }
 
 /******************************************************/
 /* FUNCIÓN PARA BORRAR EL POSIT QUE YO QUIERA */
 
 
-function deletePosit(pLista, pId) {
+function deletePosit(pId) {
     var insideTareas = tareas.innerHTML;
 
-    for (let i = 0; i < pLista.length; i++) {
+    for (let i = 0; i < toDoList.length; i++) {
 
-        if (pLista[i].id == pId) {
-            console.log(pLista[i]); // ID a eliminar
+        if (toDoList[i].id == pId) {
+            console.log(toDoList[i]); // ID a eliminar
 
 
-            pLista.splice(pLista[i], 1);
+            toDoList.splice(toDoList[i], 1);
         }
 
     }
@@ -180,22 +180,11 @@ function deletePosit(pLista, pId) {
 
     postAllPosits()
 
-    return pLista;
+    return toDoList;
 }
 
 
 
-/******************************************************/
-/* FUNCIÓN PARA FILTRAR POR PRIORIDAD */
-
-function filterPriority(pLista, pPrioridad) {
-
-    for (dos of toDoList) {
-        console.log(dos);
-    }
-
-}
 
 
-/******************************************************/
-/* FUNCIÓN PARA FILTRAR POR BÚSQUEDA */
+
