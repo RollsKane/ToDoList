@@ -160,24 +160,20 @@ function deleteLastPosit(pLista) {
 }
 
 /******************************************************/
-/* FUNCIÓN PARA BORRAR EL POSIT QUE YO QUIERA */ //////////////////////////////// NO FUNCIONA BIEN
+/* FUNCIÓN PARA BORRAR EL POSIT QUE YO QUIERA */
 
 
 function deletePosit(pLista, pId) {
-    var insideTareas = tareas.innerHTML;
-
-    for (let i = 0; i <= pLista.length; i++) {
-
-        if (pLista[i].id != pId) {
-            console.log(pLista[i]); // ID a eliminar
-            pLista.splice(pLista[i], 1);
 
 
+    for (let i = 0; i < pLista.length; i++) {
+
+        if (pLista[i].id == pId) {
+            var positionDelete = pLista.indexOf(pLista[i]);
+            pLista.splice(positionDelete, 1);
         }
 
     }
-
-
 
     postAllPosits(pLista)
 
