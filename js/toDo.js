@@ -6,7 +6,7 @@
   | |/ _ \| | | / _ \  | |   | / __| __|
   | | (_) | |/ / (_) | | |___| \__ \ |_
   \_/\___/|___/ \___/  \_____/_|___/\__|By Rolls 2020*/
-/* VERSIÓN 0.3 */
+/* VERSIÓN 0.4 */
 /******************************************************/
 
 
@@ -166,20 +166,20 @@ function deleteLastPosit(pLista) {
 function deletePosit(pLista, pId) {
     var insideTareas = tareas.innerHTML;
 
-    for (let i = 0; i < pLista.length; i++) {
+    for (let i = 0; i <= pLista.length; i++) {
 
-        if (pLista[i].id == pId) {
+        if (pLista[i].id != pId) {
             console.log(pLista[i]); // ID a eliminar
-
-
             pLista.splice(pLista[i], 1);
+
+
         }
 
     }
 
 
 
-    postAllPosits()
+    postAllPosits(pLista)
 
     return pLista;
 }
