@@ -6,7 +6,7 @@
   | |/ _ \| | | / _ \  | |   | / __| __|
   | | (_) | |/ / (_) | | |___| \__ \ |_
   \_/\___/|___/ \___/  \_____/_|___/\__|By Rolls 2020*/
-            /* VERSIÓN 0.4 */
+            /* VERSIÓN 0.5 */
 /******************************************************/
 
 /* CSS STYLES */
@@ -15,7 +15,7 @@
 
 /* Cargando reset */
 
-@import url(reset.css);
+/* @import url(reset.css); */
 
 /* Cargando fuentes */
 
@@ -28,11 +28,6 @@ font-family: 'Share Tech', sans-serif;
 font-family: 'Press Start 2P', cursive;
 /*
 
-/* COLORES */
-/*
-color rojo: #fa573a;
-color azul: #21242e;
-*/
 
 /*************************************/
 
