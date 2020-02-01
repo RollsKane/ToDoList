@@ -6,7 +6,7 @@
   | |/ _ \| | | / _ \  | |   | / __| __|
   | | (_) | |/ / (_) | | |___| \__ \ |_
   \_/\___/|___/ \___/  \_____/_|___/\__|By Rolls 2020*/
-/* VERSIÓN 0.7 */
+/* VERSIÓN 0.6 */
 /******************************************************/
 
 
@@ -19,64 +19,6 @@ var filterList = new Array();
 var id = 1;
 var tareas = document.getElementById('tareas'); // Aquí se hallan las tareas en el HTML
 var icon = 'normal';
-
-
-
-
-
-
-/* BOTONES - ADD EVENT LISTENERS */
-
-/************Event listener para botón Clear All***********/
-var buttonClear = document.querySelector('#clear');
-buttonClear.addEventListener('click', botonBorrarAll);
-
-function botonBorrarAll(e) {
-    console.log(e.target)
-    clearPosit(toDoList);
-}
-
-/************Event listener para botón Guardar***********/
-var buttonGuardar = document.getElementById('guardar');
-buttonGuardar.addEventListener('click', botonGuardar);
-var tituloTarea = document.getElementById('tituloTarea');
-var prioridad = document.getElementById('prioridad');
-
-function botonGuardar(e) {
-    console.log(e.target)
-
-    createPosit(tituloTarea.value, prioridad.value);
-}
-
-/************ Event listener para filtrado por prioridades ***********/
-
-var prioridadSelect = document.getElementById('prioridadSelect');
-prioridadSelect.addEventListener('click', prioridadesSelect);
-
-
-function prioridadesSelect(e) {
-
-
-    if (prioridadSelect.value == '') {
-        postAllPosits(toDoList);
-    } else {
-        console.log(prioridadSelect.value);
-        filterPriority(toDoList, prioridadSelect.value);
-    }
-
-}
-
-/************ Filtrado por texto para prioridades ***********/
-
-var search = document.getElementById('search');
-search.addEventListener('keyup', barraBusqueda);
-
-function barraBusqueda(e) {
-    searchPosit(toDoList, search.value);
-}
-
-
-
 
 /* Ejemplo de Lista de Jsons */
 /*
@@ -276,7 +218,7 @@ function filterPriority(pLista, pPrioridad) {
 /******************************************/
 
 
-var tituloSearch;
+var tituloSearch
 
 /******************************************************/
 /* FUNCIÓN PARA FILTRAR POR BÚSQUEDA */
