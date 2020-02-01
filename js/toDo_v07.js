@@ -6,7 +6,7 @@
   | |/ _ \| | | / _ \  | |   | / __| __|
   | | (_) | |/ / (_) | | |___| \__ \ |_
   \_/\___/|___/ \___/  \_____/_|___/\__|By Rolls 2020*/
-/* VERSIÓN 0.8 */
+/* VERSIÓN 0.7 */
 /******************************************************/
 
 
@@ -73,26 +73,12 @@ search.addEventListener('keyup', barraBusqueda);
 
 function barraBusqueda(e) {
 
-    filterList = [];
+    var listaFiltrada = new Array();
 
     let texto = search.value.toLowerCase();
     console.log(texto);
 
-
-    for (let posit of toDoList) {
-        var titulo = posit.titulo;
-        let tituloSearch = titulo.includes(texto);
-
-        if (tituloSearch == true) {
-            filterList.push(posit)
-            postAllPosits(filterList);
-        } else {
-            'No existen notas que contengan esas letras';
-        }
-    }
-    console.log(filterList)
-
-    postAllPosits(filterList);
+    searchPosit(toDoList, texto);
 
 }
 /******************************************************** */
@@ -103,8 +89,6 @@ function eventoEliminar(e) {
     var parent = e.parentElement.parentElement;
     console.log(parent.id);
     deletePosit(toDoList, parent.id);
-
-
 }
 
 
@@ -313,6 +297,29 @@ function filterPriority(pLista, pPrioridad) {
 
 
 /******************************************************/
+/* FUNCIÓN PARA FILTRAR POR BÚSQUEDA */
+
+function searchPosit(pLista, pSearch) {
+
+
+    for (let posit of pLista) {
+        console.log(posit.titulo);
+        let tituloSearch = posit.includes(pSearch).toLowerCase();
+        if (tituloSearch == true) {
+            filterList.push(posit)
+            postAllPosits(filterList);
+        } else {
+            'No existen notas que contengan esas letras';
+        }
+    }
+    console.log(filterList)
+
+    postAllPosits(filterList);
+
+    return filterList;
+}
+
+
 /******************************************************/
 
 
